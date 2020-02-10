@@ -11,7 +11,7 @@ def do_sizing(num_of_vectors, dim, data_type, index_type, single_deploy, num_of_
     if not num_of_cluster:
         num_of_cluster = 0
     if not single_deploy:
-        single_deploy = False
+        # single_deploy = False
         if num_of_cluster <=0:
             return "Waring: The num of cluster must above 0."
 
