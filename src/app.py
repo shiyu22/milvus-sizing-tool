@@ -36,8 +36,8 @@ def do_sizing_api():
         single_deploy = args['Single']
         num_of_cluster = args['Cluster']
 
-        status = do_sizing(num_of_vectors, dim, data_type, index_type, single_deploy, num_of_cluster)
-        return "{}".format(status)
+        disk, ram = do_sizing(num_of_vectors, dim, data_type, index_type, single_deploy, num_of_cluster)
+        return "disk: {}, ram: {}".format(disk, ram)
     except Exception as e:
         return "Error with {}".format(e)
 
