@@ -14,7 +14,7 @@
 |Single|bool|True/False|
 |[Cluster]|int|>0|
 
-
+> When the data type is bytes, the index type is only FLAT/IVFFLAT.
 
 ## how to use
 
