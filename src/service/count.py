@@ -32,7 +32,7 @@ def do_sizing(num_of_vectors, dim, data_type, index_type, single_deploy, num_of_
 
         if data_type == 'float':
             if index_type == 'IVFSQ8' or index_type == 'IVFSQ8H':
-                data_size = int(size*1.3/4)+1
+                data_size = int(size*1.3)+1
                 # return str(int(size*1.3/4)+1)+status
             else:
                 data_size = int(size*2)+1
