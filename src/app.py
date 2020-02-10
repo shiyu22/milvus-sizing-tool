@@ -20,21 +20,22 @@ CORS(app)
 
 @app.route('/api/v1/sizing', methods=['POST'])
 def do_sizing_api():
-    args = reqparse.RequestParser(). \
-        add_argument('Vectors', type=int). \
-        add_argument('Dimensions', type=int). \
-        add_argument('Data', type=str). \
-        add_argument('Index', type=str). \
-        add_argument('Single', type=bool). \
-        add_argument('Cluster', type=int). \
-        parse_args()
-    num_of_vectors = args['Vectors']
-    dim = args['Dimensions']
-    data_type = args['Data']
-    index_type = args['Index']
-    single_deploy = args['Single']
-    num_of_cluster = args['Cluster']
     try:
+        args = reqparse.RequestParser(). \
+            add_argument('Vectors', type=int). \
+            add_argument('Dimensions', type=int). \
+            add_argument('Data', type=str). \
+            add_argument('Index', type=str). \
+            add_argument('Single', type=bool). \
+            add_argument('Cluster', type=int). \
+            parse_args()
+        num_of_vectors = args['Vectors']
+        dim = args['Dimensions']
+        data_type = args['Data']
+        index_type = args['Index']
+        single_deploy = args['Single']
+        num_of_cluster = args['Cluster']
+
         status = do_sizing(num_of_vectors, dim, data_type, index_type, single_deploy, num_of_cluster)
         return "{}".format(status)
     except Exception as e:
