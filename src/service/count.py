@@ -3,14 +3,15 @@ import time
 
 
 def do_sizing(num_of_vectors, dim, data_type, index_type, single_deploy, num_of_cluster):
-
+    print(num_of_vectors, dim, data_type, index_type, single_deploy)
     if dim > 16384 or dim <= 0:
         return "Waring: The dimensions' reference value is (0,16384]."
     if num_of_vectors <=0:
         return "Waring: The num of vectors must above 0."
-    if not single_deploy:
+    if not num_of_cluster:
         num_of_cluster = 0
     if not single_deploy:
+        single_deploy = False
         if num_of_cluster <=0:
             return "Waring: The num of cluster must above 0."
 
